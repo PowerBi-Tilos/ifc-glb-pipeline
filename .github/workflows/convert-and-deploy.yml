@@ -1,0 +1,29 @@
+name: Convert IFC to GLB and Deploy
+
+on:
+  push:
+    paths:
+      - 'input/*.ifc'
+
+jobs:
+  convert-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Blender
+      run: |
+        sudo apt-get update
+        sudo snap install blender --classic
+
+    - name: Run Blender conversion
+      run: |
+        blender --background --python blender/ifc_to_glb_with_guids.py -- input/model.ifc public/model.glb
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
