@@ -1,0 +1,141 @@
+https://<your-username>.github.io/ifc-glb-pipeline/
+
+yaml
+Copy code
+
+For example:  
+[https://powerbi-tilos.github.io/ifc-glb-pipeline/](https://powerbi-tilos.github.io/ifc-glb-pipeline/)
+
+---
+
+## 🧩 Power Apps Embedding
+
+Use the **HTML Text** or **Iframe** component and paste this:
+
+```html
+<iframe src="https://<your-username>.github.io/ifc-glb-pipeline/" width="100%" height="600px" style="border:none;"></iframe>
+🔄 Extend & Customize
+viewer/enhanced-viewer.html (add filters, sidebar, database linking)
+
+Multi-model support via URL param: ?model=xyz.glb
+
+Add metadata inspection panel
+
+Integrate with backend (API calls on click)
+
+🧠 Dependencies
+Blender 3.6+
+
+IfcOpenShell
+
+Babylon.js (CDN)
+
+yaml
+Copy code
+
+---
+
+Once you confirm this is added and committed, I’ll give you a checklist for testing and optional enhancements (e.g., enhanced viewer or version switching).
+
+Let me know once you're done!
+
+
+
+
+
+
+You said:
+I am missing the information regarding what to do with this code:
+
+For example:  
+[https://powerbi-tilos.github.io/ifc-glb-pipeline/](https://powerbi-tilos.github.io/ifc-glb-pipeline/)
+
+---
+
+## 🧩 Power Apps Embedding
+
+Use the **HTML Text** or **Iframe** component and paste this:
+
+html
+<iframe src="https://<your-username>.github.io/ifc-glb-pipeline/" width="100%" height="600px" style="border:none;"></iframe>
+
+
+ChatGPT said:
+Great catch — let me walk you through exactly how to use that iframe snippet inside Power Apps, including all the steps so nothing is left unclear.
+
+🧩 How to Embed the Babylon.js Viewer in Power Apps
+You’ll use the iframe code to embed your GitHub-hosted Babylon viewer directly in your Power App. Here's how:
+
+✅ Prerequisites
+You’ve already completed:
+
+.ifc file uploaded to input/
+
+.glb and index.html deployed to GitHub Pages
+
+Example viewer URL is:
+
+arduino
+Copy code
+https://powerbi-tilos.github.io/ifc-glb-pipeline/
+🧭 Step-by-Step in Power Apps
+🖼 Option A: Use the “HTML Text” control (Most flexible)
+Open your Canvas App in Power Apps Studio.
+
+In the Insert pane, search for "HTML text" and add it to your screen.
+
+In the HtmlText property, paste:
+
+html
+Copy code
+<iframe src="https://powerbi-tilos.github.io/ifc-glb-pipeline/" width="100%" height="600px" style="border:none;"></iframe>
+Resize the control to fit your layout.
+
+✅ Your GLB viewer is now live inside Power Apps!
+
+🧱 Option B: Use a PCF Control or Web Viewer Component
+For more advanced use cases (like bidirectional interaction or dynamic URL binding), you can:
+
+Use the Web Viewer control (from the "Modern controls")
+
+Or build a PCF (PowerApps Component Framework) control if you need deeper integration.
+
+But for most use cases, the HTML Text control is sufficient and quick.
+
+🧩 Bonus: Dynamic Viewer per Record (Optional)
+You can make the iframe change dynamically, e.g., when selecting a model from a gallery:
+
+html
+Copy code
+<iframe src="https://powerbi-tilos.github.io/ifc-glb-pipeline/?model=" & Gallery1.Selected.ModelFileName & ".glb" width="100%" height="600px" style="border:none;"></iframe>
+Assumes your Babylon viewer supports query params like ?model=xyz.glb. I can help you extend the index.html viewer to support that if you'd like.
+
+🔍 Summary
+Task	Tool
+Embed static viewer	HTML Text control
+Dynamically change model	HTML + expression binding
+Advanced integration	Web Viewer / PCF control
+
+Would you like help with:
+
+Making the Babylon viewer support dynamic model loading via ?model=xyz.glb?
+
+Adding controls in Power Apps to filter or interact with GUIDs?
+
+Let me know and we can deepen this integration further.
+
+
+
+
+
+
+
+
+
+
+
+Tools
+
+
+
+ChatGPT can make mistakes. OpenAI doesn't use Helgi Valur 
